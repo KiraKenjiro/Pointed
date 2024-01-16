@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #23272A;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Function to generate a random number between min (inclusive) and max (exclusive)
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        // Array of image filenames
+        var images = [];
+        for (var i = 1; i <= 10; i++) {
+            images.push('assets/image' + i + '.jpg');
+        }
+
+        // Randomly select an image from the array
+        var randomIndex = getRandomInt(0, images.length);
+        var randomImage = images[randomIndex];
+
+        // Create an img element and set its source attribute
+        var imgElement = document.createElement('img');
+        imgElement.src = randomImage;
+        imgElement.alt = 'Random Image';
+
+        // Append the img element to the body
+        document.body.appendChild(imgElement);
+    </script>
+</body>
+</html>
